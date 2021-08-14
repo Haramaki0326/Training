@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "greet": "echo \"Hello World!\""
+    "greet": "echo \"Hello World!\"",
+    "format": "prettier --write \"src/**/*.{js,json,md,html}\"",
+    "lint": "eslint \"src/**/*.js\"",
+    "fix": "npm run format && npm run lint",
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -17,5 +22,18 @@
   "bugs": {
     "url": "https://github.com/Haramaki0326/Training/issues"
   },
-  "homepage": "https://github.com/Haramaki0326/Training#readme"
+  "homepage": "https://github.com/Haramaki0326/Training#readme",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2"
+  }
 }
