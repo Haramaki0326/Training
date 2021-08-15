@@ -1,4 +1,4 @@
-name: Node.js CI
+name: Check frontEnds
 
 on:
   # mainにプルリクエストをすると起動する
@@ -11,14 +11,16 @@ on:
       - 'main' 
 
 jobs:
-  build:
-
+  lint:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
-        node-version: '16'
-    - run: npm install
-    - run: npm run greet
+        node-version: 16.x
+    - name: Install packages
+      run: npm ci
+    - name: Prettier
+      run: npm run check-format
+    - name: Lint
+      run: npm run lint
