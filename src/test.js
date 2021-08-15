@@ -1,6 +1,6 @@
 function hello(name) {
   document.body.textContent 
-       = 'Hello, ' + name + '!';
+  = 'Hello, ' + nama + '!';
 }
 
-   hello('World')
+hello('World')
