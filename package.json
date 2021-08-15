@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write \"src/**/*.{js,json,md,html}\"",
+    "check-format": "prettier --check \"src/**/*.{js,json,md,html}\"",
     "lint": "eslint --fix \"src/**/*.js\"",
     "fix": "npm run format && npm run lint",
     "prepare": "husky install",
